@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bai_Tap_2.UserControl
+namespace Bai_Tap_2.UserControls
 {
     /// <summary>
-    /// Interaction logic for UC_Body.xaml
+    /// Interaction logic for UC_Status.xaml
     /// </summary>
-    public partial class UC_Body : UserControl
+    public partial class UC_Status : UserControl
     {
-        public UC_Body()
+        public UC_Status()
         {
             InitializeComponent();
         }

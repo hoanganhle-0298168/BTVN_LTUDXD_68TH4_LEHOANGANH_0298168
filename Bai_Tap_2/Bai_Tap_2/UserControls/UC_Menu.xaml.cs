@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Bai_Tap_2.UserControl
+namespace Bai_Tap_2.UserControls
 {
     /// <summary>
-    /// Interaction logic for UC_Footer.xaml
+    /// Interaction logic for UC_Menu.xaml
     /// </summary>
-    public partial class UC_Footer : UserControl
+    public partial class UC_Menu : UserControl
     {
-        public UC_Footer()
+        public UC_Menu()
         {
             InitializeComponent();
         }

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Bai_Tap_2"
+        xmlns:UserControls="clr-namespace:Bai_Tap_2.UserControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
@@ -12,8 +13,10 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        
-        
+
+        <UserControls:UC_Menu Grid.Row="0" />
+        <UserControls:UC_Main Grid.Row="1" />
+        <UserControls:UC_Status Grid.Row="2" />
 
     </Grid>
 </Window>
