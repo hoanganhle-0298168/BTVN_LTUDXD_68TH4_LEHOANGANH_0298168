@@ -10,13 +10,11 @@ namespace Bai_Tap_4.Models
     internal class Beam
     {
         public string Id { get; set; }
-        public string Mark { get; set; } //mã hiệu
-        public string Story { get; set; } //tầng
-        public double Length { get; set; } //chiều dài
-        public double Volume { get; set; } //thể tích
-                                           //khai báo quan hệ 1-1 của beam và frameEtabs
+        public string Mark { get; set; }
+        public string Story { get; set; }
+        public double Length { get; set; }
+        public double Volume { get; set; }
         public EtabsAPI_Frame Frame { get; set; }
-        //khai báo quan hệ 1-n giữa beam và frame force
-        public ObservableCollection<EtabsAPI_FrameForce> FrameForces { get; set; } //danh sách nội lực của dầm
+        public ObservableCollection<EtabsAPI_FrameForce> FrameForces { get; set; }
     }
 }

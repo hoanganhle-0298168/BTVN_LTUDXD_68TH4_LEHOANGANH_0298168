@@ -193,6 +193,8 @@ namespace Bai_Tap_4.ViewModels
             set { _length = value; OnPropertyChanged(); }
         }
 
+        #endregion
+
         //khai báo command
 
         //hàm khởi tạo của EtabsAPI_FramesViewmodel
@@ -204,122 +206,7 @@ namespace Bai_Tap_4.ViewModels
         //Viết phương thức lấy dữ liệu từ Etabs API
         public void ETABSAPI_GetallFrame()
         {
-            string trangthai = "";
-            cSapModel SapModel;
-            cOAPI EtabsObject;
-
-            //danh sách biến của getallframe
-            int ret = -1;
-            int NumberNames = 0;
-            string[] MyName = { };
-
-            string[] PropName = { };
-
-            string[] StoryName = { };
-
-            string[] PointName1 = { };
-
-            string[] PointName2 = { };
-
-            double[] Point1X = { };
-
-            double[] Point1Y = { };
-
-            double[] Point1Z = { };
-
-            double[] Point2X = { };
-
-            double[] Point2Y = { };
-
-            double[] Point2Z = { };
-
-            double[] Angle = { };
-
-            double[] Offset1X = { };
-
-            double[] Offset2X = { };
-
-            double[] Offset1Y = { };
-
-            double[] Offset2Y = { };
-
-            double[] Offset1Z = { };
-
-            double[] Offset2Z = { };
-
-            int[] CardinalPoint = { };
-
-            string csys = "Global";
-
-            //danh sách biến của GetLableNameList
-            int NumberNames2 = 0;
-            string[] MyName2 = { };
-            string[] MyLabel2 = { };
-            string[] MyStory2 = { };
-
-            //Khởi tạo Etabs Object
-            //EtabsObject = CreateObject("CSI.ETABS.API.ETABSObject");
-            EtabsObject = null;
-
-            // TƯơng tác với Etabs
-            try
-            {
-                //Lấy Etabs Object đang hoạt động
-                EtabsObject = (ETABSv1.cOAPI)System.Runtime.InteropServices.Marshal.GetActiveObject("CSI.ETABS.API.ETABSObject");
-                //mô hinh Sapmodel
-                SapModel = EtabsObject.SapModel;
-
-                //Đặt đơn vị cho mô hình
-                SapModel.SetPresentUnits(eUnits.kN_m_C);
-
-                //GetAllFrames - lấy toàn bộ thông tin phần tử Thanh
-                ret = SapModel.FrameObj.GetAllFrames(ref NumberNames, ref MyName, ref PropName, ref StoryName, ref PointName1, ref PointName2, ref Point1X, ref Point1Y, ref Point1Z, ref Point2X, ref Point2Y, ref Point2Z,
-                                                     ref Angle, ref Offset1X, ref Offset2X, ref Offset1Y, ref Offset2Y, ref Offset1Z, ref Offset2Z, ref CardinalPoint);
-
-                ret = SapModel.FrameObj.GetLabelNameList(ref NumberNames2, ref MyName2, ref MyLabel2, ref MyStory2);
-
-
-                //Đưa thông tin  vừa đọc vào đối tượng Etabs_Frame
-                for (int i = 0; i < (NumberNames - 1); i++)
-                {
-                    //1.lấy từng thông tin của đối tượng  Frame một trong Etabs API
-                    //khởi tạo đối tượng _frame
-                    EtabsAPI_Frame _frame = new EtabsAPI_Frame();
-                    //gán giá trị thuộc tính vào trong đối tượng frame
-                    _frame.MyName = MyName[i];
-                    _frame.Label = MyLabel2[i];
-                    _frame.PropName = PropName[i];
-                    _frame.StoryName = StoryName[i];
-                    _frame.PointName1 = PointName1[i];
-                    _frame.PointName2 = PointName2[i];
-                    _frame.Point1X = Point1X[i];
-                    _frame.Point1Y = Point1Y[i];
-                    _frame.Point1Z = Point1Z[i];
-                    _frame.Point2X = Point2X[i];
-                    _frame.Point2Y = Point2Y[i];
-                    _frame.Point2Z = Point2Z[i];
-                    _frame.Angle = Angle[i];
-                    _frame.Offset1X = Offset1X[i];
-                    _frame.Offset2X = Offset2X[i];
-                    _frame.Offset1Y = Offset1Y[i];
-                    _frame.Offset2Y = Offset2Y[i];
-                    _frame.Offset1Z = Offset1Z[i];
-                    _frame.Offset2Z = Offset2Z[i];
-                    _frame.CardinalPoint = CardinalPoint[i];
-                    EtabsFrames.Add(_frame);
-                }
-
-
-
-
-
-                trangthai = ("Lấy thông tin phần tử thanh thành công");
-            }
-            catch (Exception ex)
-            {
-                trangthai = ("Không tìm thấy chương trình Etabs nào đang hoạt động.");
-                return;
-            }
+          
         }
     }
 }
